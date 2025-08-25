@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Divya Vangaveeti - Projects</title>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="js/main.js"></script>
+  <style>
+    header {
+      position: relative;
+      background-color: #007acc;
+      padding: 2rem 1rem 4rem 1rem;
+      text-align: center;
+      color: white;
+      overflow: hidden;
+    }
+    header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 5px solid white;
+      object-fit: cover;
+      margin: 0 auto 1rem;
+      display: block;
+      box-shadow: 0 0 15px rgba(255 255 255 / 0.6);
+    }
+    .fade-in-section {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+      will-change: opacity, transform;
+    }
+    .fade-in-section.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+    article {
+      margin-bottom: 2rem;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 1rem;
+    }
+    article h3 {
+      color: #007acc;
+      margin-bottom: 0.5rem;
+    }
+    article p {
+      margin: 0.3rem 0;
+    }
+    article a {
+      color: #007acc;
+      text-decoration: none;
+    }
+    article a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <img src="IMG-20240709-WA0021.jpg" alt="Divya Vangaveeti" />
+  <h1>Divya Vangaveeti</h1>
+  <nav>
+    <a href="index.html">About</a>
+    <a href="skills.html">Skills</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+  <section class="fade-in-section">
+    <h2>My Projects</h2>
+
+    <article>
+      <h3>DEA-RNN: Hybrid DL Approach for Cyberbullying Detection</h3>
+      <p><strong>Description:</strong> Developed a deep learning hybrid model using DEA-RNN to detect cyberbullying on Twitter. The full web app includes user registration, tweet posting and checking for cyberbullying, and an admin panel to view cyberbullying statistics.</p>
+      <p><strong>Role & Responsibilities:</strong> Designed and coded both frontend and backend modules, knowledge sharing, integrating Django ORM with Python, HTML, and CSS.</p>
+      <p><strong>Technologies:</strong> Python, Django, MySQL, HTML, CSS, Windows.</p>
+    </article>
+
+    <article>
+      <h3>DevOps Internship Project</h3>
+      <p>Completed internship focused on DevOps practices including CI/CD pipeline automation, containerization, and deployment strategies.</p>
+      <p><strong>Skills gained:</strong> DevOps tools and automation workflows.</p>
+    </article>
+
+    <article>
+      <h3>Web Development Internship Project</h3>
+      <p>Developed web pages and functionalities using HTML, CSS, JavaScript as part of internship with PRONTEFF.</p>
+      <p><strong>Skills gained:</strong> Frontend development, responsive design techniques.</p>
+    </article>
+
+    <article>
+      <h3>Animation and Personality Development</h3>
+      <p>Received certificates in animation and personality development bootcamp to improve soft skills and creativity in development projects.</p>
+    </article>
+
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 Divya Vangaveeti</p>
+</footer>
+
+<script>
+  const faders = document.querySelectorAll('.fade-in-section');
+  const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+  const appearOnScroll = new IntersectionObserver(function(entries, appearOnScroll) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        appearOnScroll.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+</script>
+
+</body>
+</html>
